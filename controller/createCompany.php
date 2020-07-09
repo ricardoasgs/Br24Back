@@ -30,20 +30,20 @@ class CreateCompanyController
         if ($this->checkForCnpjDuplicate()) {
             $data["id"] = $this->checkForCnpjDuplicate();
             $result = $this->company->updateCompany($data);
-//             if ($result) {
-//                 echo "A empresa atualizada com sucesso!";
-//             } else {
-//                 echo "Erro ao atualizar empresa!";
-//             }
-            echo $result;
+            if ($result) {
+                echo "A empresa atualizada com sucesso!";
+            } else {
+                echo "Erro ao atualizar empresa!";
+            }
+//             echo $result;
         } else {
             $result = $this->company->createCompany($data);
-//             if ($result) {
-//                 echo "A empresa criada com sucesso!";
-//             } else {
-//                 echo "Erro ao gravar empresa!";
-//             }
-            echo $result;
+            if ($result) {
+                echo "A empresa criada com sucesso!";
+            } else {
+                echo "Erro ao gravar empresa!";
+            }
+//             echo $result;
         }
 
     }
