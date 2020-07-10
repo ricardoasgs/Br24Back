@@ -99,7 +99,7 @@ class Company
         $queryData = http_build_query(array(
             'fields' => array(
                 "NAME" => $data["nome"],
-                PHONE" => array(
+                "PHONE" => array(
                     array(
                         "VALUE" => $data["telefone"],
                         "VALUE_TYPE" => "WORK",
@@ -113,6 +113,7 @@ class Company
                 ),
             ),
         ));
+        
         return doRequest($queryUrl, $queryData);
 
     }
