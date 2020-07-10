@@ -99,8 +99,18 @@ class Company
         $queryData = http_build_query(array(
             'fields' => array(
                 "NAME" => $data["nome"],
-                "LAST_NAME" => $data["sobrenome"],
-                'COMPANY_ID' => $data["id"],
+                PHONE" => array(
+                    array(
+                        "VALUE" => $data["telefone"],
+                        "VALUE_TYPE" => "WORK",
+                    ),
+                ),
+                "EMAIL" => array(
+                    array(
+                        "VALUE" => $data["email"],
+                        "VALUE_TYPE" => "WORK",
+                    ),
+                ),
             ),
         ));
         return doRequest($queryUrl, $queryData);
