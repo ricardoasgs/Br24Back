@@ -106,6 +106,17 @@ class Company
         return doRequest($queryUrl, $queryData);
 
     }
+    
+    public function getContact()
+    {
+
+        $queryUrl = baseUrl() . '/crm.contact.list.json';
+        $queryData = http_build_query(array(
+            'order' => array("DATE_CREATE" => "ASC")
+        ));
+        return doRequest($queryUrl, $queryData);
+
+    }
 
     public function getContactById($id)
     {
