@@ -7,10 +7,8 @@ class GetContactByIdController
     public function __construct()
     {
         $this->company = new Company();
-        $findOne = $this->company->getContactById($_GET['id']);
-        if ($findOne) {
-            print_r($findOne);
-        }
+        $result = $this->company->getContactById($_GET['id']);
+        echo $result;
     }
 }
 new GetContactByIdController();
