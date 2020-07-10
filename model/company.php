@@ -123,7 +123,8 @@ class Company
 
         $queryUrl = baseUrl() . '/crm.contact.get.json';
         $queryData = http_build_query(array(
-            'filter' => array("COMPANY_ID" => $id),
+//             'filter' => array("COMPANY_ID" => $id),
+            'order' => array("DATE_CREATE" => "ASC")
         ));
         return doRequest($queryUrl, $queryData);
 
