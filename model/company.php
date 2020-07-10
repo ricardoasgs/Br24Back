@@ -121,7 +121,7 @@ class Company
     public function getContactById($id)
     {
 
-        $queryUrl = baseUrl() . '/crm.contact.list.json';
+        $queryUrl = baseUrl() . '/crm.contact.get.json';
         $queryData = http_build_query(array(
             'filter' => array("COMPANY_ID" => $id),
         ));
