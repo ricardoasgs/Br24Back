@@ -141,6 +141,84 @@ class Company
 
     }
 
+    public function updateContact($data)
+    {
+        $queryUrl = baseUrl() . '/crm.contact.add.json';
+        $queryData = http_build_query(array(
+            'fields' => array(
+                "NAME" => $data["nome"],
+                "PHONE" => array(
+                    array(
+                        "VALUE" => $data["telefone"],
+                        "VALUE_TYPE" => "WORK",
+                    ),
+                ),
+                "EMAIL" => array(
+                    array(
+                        "VALUE" => $data["email"],
+                        "VALUE_TYPE" => "WORK",
+                    ),
+                ),
+            ),
+        ));
+        
+        return doRequest($queryUrl, $queryData);
+
+    }
+
+    public function deleteContact($id)
+    {
+
+        $queryUrl = baseUrl() . '/crm.contact.delete.json';
+        $queryData = http_build_query(array(
+            "ID" => $id,
+        ));
+        return doRequest($queryUrl, $queryData);
+
+    }
+
+    public function createDeal($data)
+    {
+        $queryUrl = baseUrl() . '/crm.contact.add.json';
+        $queryData = http_build_query(array(
+            'fields' => array(
+                "TITLE" => $data["titulo"],
+                "COMPANY_ID" => $data["id"],
+                "CURRENCY_ID" => "BRL", 
+                "OPPORTUNITY": $data["valor"]
+                "TYPE_ID" => "GOODS", 
+                "STAGE_ID" => "NEW",
+                
+            ),
+        ));
+        
+        return doRequest($queryUrl, $queryData);
+
+    }
+
+    public function getDealById($id)
+    {
+
+        $queryUrl = baseUrl() . '/crm.deal.list.json';
+        $queryData = http_build_query(array(
+            'filter' => array("COMPANY_ID" => $id),
+            'select' => array("ID", "TITLE", "OPPORTUNITY"),
+        ));
+        return doRequest($queryUrl, $queryData);
+
+    }
+
+    public function deleteDeal($id)
+    {
+
+        $queryUrl = baseUrl() . '/crm.deal.delete.json';
+        $queryData = http_build_query(array(
+            "ID" => $id,
+        ));
+        return doRequest($queryUrl, $queryData);
+
+    }
+
     public function checkCnpj($cnpj)
     {
 
