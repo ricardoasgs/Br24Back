@@ -184,7 +184,6 @@ class Company
             'fields' => array(
                 "TITLE" => $data["titulo"],
                 "COMPANY_ID" => $data["idEmpresa"],
-                "CONTACT_ID" => $data["idContato"],
                 "CURRENCY_ID" => "BRL", 
                 "OPPORTUNITY"=> $data["valor"],
                 "TYPE_ID" => "GOODS", 
