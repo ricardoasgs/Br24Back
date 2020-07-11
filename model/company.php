@@ -183,7 +183,8 @@ class Company
         $queryData = http_build_query(array(
             'fields' => array(
                 "TITLE" => $data["titulo"],
-                "COMPANY_ID" => $data["id"],
+                "COMPANY_ID" => $data["idEmpresa"],
+                "CONTACT_ID" => $data["idContato"],
                 "CURRENCY_ID" => "BRL", 
                 "OPPORTUNITY"=> $data["valor"],
                 "TYPE_ID" => "GOODS", 
@@ -202,7 +203,7 @@ class Company
         $queryUrl = baseUrl() . '/crm.deal.list.json';
         $queryData = http_build_query(array(
             'filter' => array("COMPANY_ID" => $id),
-            'select' => array("ID", "TITLE", "OPPORTUNITY"),
+            'select' => array("ID", "TITLE", "OPPORTUNITY", "CONTACT_ID"),
         ));
         return doRequest($queryUrl, $queryData);
 
