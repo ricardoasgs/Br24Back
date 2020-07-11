@@ -179,7 +179,7 @@ class Company
 
     public function createDeal($data)
     {
-        $queryUrl = baseUrl() . '/crm.contact.add.json';
+        $queryUrl = baseUrl() . '/crm.deal.add.json';
         $queryData = http_build_query(array(
             'fields' => array(
                 "TITLE" => $data["titulo"],
