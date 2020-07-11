@@ -14,7 +14,7 @@ class CreateDealController
     {
         $data = json_decode(file_get_contents("php://input"), true);
         $result = $this->company->createDeal($data);
-        echo $result;
+        // echo $result;
         if ($result) {
             echo "O negocio foi criado com sucesso!";
         } else {

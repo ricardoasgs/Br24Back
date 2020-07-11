@@ -99,6 +99,7 @@ class Company
         $queryData = http_build_query(array(
             'fields' => array(
                 "NAME" => $data["nome"],
+                "COMPANY_ID"=> $data["id"]
                 "PHONE" => array(
                     array(
                         "VALUE" => $data["telefone"],
