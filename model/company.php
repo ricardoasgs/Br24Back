@@ -185,7 +185,7 @@ class Company
                 "TITLE" => $data["titulo"],
                 "COMPANY_ID" => $data["id"],
                 "CURRENCY_ID" => "BRL", 
-                "OPPORTUNITY": $data["valor"]
+                "OPPORTUNITY"=> $data["valor"]
                 "TYPE_ID" => "GOODS", 
                 "STAGE_ID" => "NEW",
                 
