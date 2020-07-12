@@ -144,10 +144,12 @@ class Company
 
     public function updateContact($data)
     {
-        $queryUrl = baseUrl() . '/crm.contact.add.json';
+        $queryUrl = baseUrl() . '/crm.contact.update.json';
         $queryData = http_build_query(array(
+            'ID' => $data["idContato"],
             'fields' => array(
                 "NAME" => $data["nome"],
+                "COMPANY_ID"=> $data["id"],
                 "PHONE" => array(
                     array(
                         "VALUE" => $data["telefone"],
