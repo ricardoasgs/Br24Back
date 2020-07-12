@@ -14,12 +14,12 @@ class CreateContactController
     {
         $data = json_decode(file_get_contents("php://input"), true);
         $result = $this->company->createContact($data);
-        echo $result;
-//         if ($result) {
-//             echo "O contato criado com sucesso!";
-//         } else {
-//             echo "Erro ao gravar Contato!";
-//         }
+        // echo $result;
+        if ($result) {
+            echo "O contato foi criado com sucesso!";
+        } else {
+            echo "Erro ao gravar o Contato!";
+        }
     }
 }
 new CreateContactController();
